@@ -3,7 +3,7 @@
 Plugin Name: Remove Extraneous Code
 Plugin URI: https://geek.hellyer.kiwi/
 Description: Removes extraneous unwanted code added to posts.
-Version: 1.0
+Version: 1.1
 Author: Ryan Hellyer
 Author URI: https://geek.hellyer.kiwi/
 License: GPL2
@@ -52,7 +52,8 @@ class Remove_Extraneous_Code {
 	private $allowed_html = array(
 		'address' => array(),
 		'a' => array(
-			'href' => array(),
+			'id' => true,
+			'href' => true,
 			'rel' => true,
 			'rev' => true,
 			'name' => true,
@@ -117,8 +118,12 @@ class Remove_Extraneous_Code {
 			'open' => true,
 			'xml:lang' => true,
 		),
-		'dl' => array(),
-		'dt' => array(),
+		'dl' => array(
+			'id' => true,
+		),
+		'dt' => array(
+			'id' => true,
+		),
 		'em' => array(),
 		'fieldset' => array(),
 		'figure' => array(
@@ -140,15 +145,30 @@ class Remove_Extraneous_Code {
 			'name' => true,
 			'target' => true,
 		),
-		'h1' => array(),
-		'h2' => array(),
-		'h3' => array(),
-		'h4' => array(),
-		'h5' => array(),
-		'h6' => array(),
-		'hr' => array(),
+		'h1' => array(
+			'id' => true,
+		),
+		'h2' => array(
+			'id' => true,
+		),
+		'h3' => array(
+			'id' => true,
+		),
+		'h4' => array(
+			'id' => true,
+		),
+		'h5' => array(
+			'id' => true,
+		),
+		'h6' => array(
+			'id' => true,
+		),
+		'hr' => array(
+			'id' => true,
+		),
 		'i' => array(),
 		'img' => array(
+			'id' => true,
 			'alt' => true,
 			'class' => true,
 			'height' => true,
@@ -164,8 +184,11 @@ class Remove_Extraneous_Code {
 			'for' => true,
 		),
 		'legend' => array(),
-		'li' => array(),
+		'li' => array(
+			'id' => true,
+		),
 		'p' => array(
+			'id' => true,
 			'dir' => true,
 			'lang' => true,
 			'xml:lang' => true,
@@ -188,6 +211,7 @@ class Remove_Extraneous_Code {
 		),
 		'sup' => array(),
 		'table' => array(
+			'id' => true,
 			'dir' => true,
 			'rules' => true,
 			'summary' => true,
@@ -259,6 +283,7 @@ class Remove_Extraneous_Code {
 		),
 		'var' => array(),
 		'video' => array(
+			'id' => true,
 			'autoplay' => true,
 			'controls' => true,
 			'height' => true,
